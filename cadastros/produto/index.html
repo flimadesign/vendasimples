@@ -64,7 +64,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -73,19 +73,20 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/documentacao/index.html?#`"><a href="#">Documentação</a></li>
         </ul>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-clipboard" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Cadastros</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`" class="subActive"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -137,9 +138,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Produto</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Cadastros <i class="ti-angle-right" aria-hidden="true"></i> Produto</div>
 
 
     </div>
@@ -152,14 +153,518 @@
 
 
 
-      <div class="padding-20">
+
+      
+      <div class="tab-header">
+        <ul class="nav nav-tabs nav-justified">
+
+          <li class="li-tab active">
+            <a href="#screen-1" aria-controls="screen-1" role="tab" data-toggle="tab">Dados Principais</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-2" aria-controls="screen-2" role="tab" data-toggle="tab">Grupo</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-3" aria-controls="screen-3" role="tab" data-toggle="tab">Tabela de Preço</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-4" aria-controls="screen-4" role="tab" data-toggle="tab">Variação</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-5" aria-controls="screen-5" role="tab" data-toggle="tab">Kit</a>
+          </li>
+
+        </ul>
+        <div class="line-tab"></div>
+      </div>
+
+      <div class="tab-content">
+
+        <form role="tabpanel" class="form-horizontal tab-pane active" id="screen-1">
+
+          <div class="container-fluid padding-20">
 
 
 
-      <div id="listaTipo">
-           <div class="filtro-tabela">
+
+
+      <h3>
+          Parceiros
+      </h3>
+
+        <div class="row">
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+              <label for="">Descrição</label>
+              <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                <label for="">Unidade</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="">
+                  <span class="input-group-addon" data-toggle="modal" data-target="#unidadeModal"><a href="#">&equiv;</a></span>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Cod. Referência</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              
+
+            </div>
+            <div class="row">
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Tipo Produto</label>
+                <!-- <div class="input-group">
+                  <input type="text" class="form-control" placeholder="">
+                  <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                  </ul>
+                </div> -->
+                <select class="form-control" aria-required="true" aria-invalid="false">
+                    <option value="">Opção 1</option>
+                    <option value="">Opção 2</option>
+                    <option value="">Opção 3</option>
+                  </select>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
+                <label for="">Formato</label>
+                <select class="form-control" aria-required="true" aria-invalid="false">
+                    <option value="">Opção 1</option>
+                    <option value="">Opção 2</option>
+                    <option value="">Opção 3</option>
+                  </select>
+                <!-- <div class="input-group">
+                  <input type="text" class="form-control" placeholder="">
+                  <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                  </ul>
+                </div> -->
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Situação</label>
+                <div class="box-switch">
+                  <label class="switch">
+                    <input type="checkbox">
+                    <div class="slider round"></div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <label for="">Imagem</label>
+                <div class="row"> 
+                  <div class="col-md-2 col-xs-2"> 
+                    <a href="#" class="thumbnail"> 
+                      <img alt="+" class="image-thumb" data-holder-rendered="true">
+                    </a> 
+                  </div> 
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+      <h3>
+          Logística
+      </h3>
+
+        <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Gtin Produto EAN 13</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Gtin Embalagem</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Localização</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Peso Líquido</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Peso Bruto</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                <label for="">Qtd. Caixa</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                <label for="">Tamanho</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="">
+                  <span class="input-group-addon" data-toggle="modal" data-target="#tamanhoModal"><a href="#">&equiv;</a></span>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+  
+      <h3>
+          Estoque
+      </h3>
+    
+
+        <div class="row">
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Quantidade Mínima</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Quantidade Máxima</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Quantidade Solicitada</label>
+    <div type="text" class="label-form-fixed">Quantidade Solicitada</div>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="panel panel-default"> 
+      <div class="panel-heading"><label>Saldo</label></div> 
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label for="">Reserva</label>
+            <div type="text" class="label-form-fixed">Reserva</div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label for="">Atual</label>
+            <div type="text" class="label-form-fixed">Atual</div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label for="">Disponível</label>
+            <div type="text" class="label-form-fixed">Reserva</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      <h3>
+          Fornecedor
+      </h3>
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <label for="">Fabricante</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="">
+      <span class="input-group-addon" data-toggle="modal" data-target="#tamanhoModal"><a href="#">&equiv;</a></span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Código Fabricante</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Marca</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Preço Custo</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <label for="">Nome do Fornecedor</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="">
+      <span class="input-group-addon" data-toggle="modal" data-target="#tamanhoModal"><a href="#">&equiv;</a></span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <label for="">Descrição do Produto no Fornecedor</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      <h3>
+          Tributos
+      </h3>
+
+        
+
+        <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <label for="">Código Tabela Produtos</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="">
+      <span class="input-group-addon" data-toggle="modal" data-target="#"><a href="#">&equiv;</a></span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <label for="">Código NCM</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="">
+      <span class="input-group-addon" data-toggle="modal" data-target="#ncmModal"><a href="#">&equiv;</a></span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Exceção NCM</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+
+  
+
+
+
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">CEST</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Origem Produto</label>
+    <!-- <div class="input-group">
+      <input type="text" class="form-control" placeholder="">
+      <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
+    </div> -->
+    <select class="form-control" aria-required="true" aria-invalid="false">
+                    <option value="">Opção 1</option>
+                    <option value="">Opção 2</option>
+                    <option value="">Opção 3</option>
+                  </select>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">Número FCI</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+    <label for="">% FCI</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+      <h3>
+          Informações Adicionais
+      </h3>
+  
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <label for="">Descrição Resumida</label>
+    <input type="text" class="form-control" placeholder="">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <label for="">Descrição</label>
+    <textarea  class="form-control">
+    
+    </textarea>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+<form role="tabpanel" class="form-horizontal tab-pane" id="screen-2">
+  <div class="container-fluid padding-20">
+
+    <div class="all-box-grupo">
+
+      <div class="box-grupo">
+        <ul>
+          <li>HD</li>
+          <li>Marca <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Samsung <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Sandisk <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Espaço <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>500Gb <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>USB <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>+</li>
+        </ul>
+      </div>
+
+      <div class="box-grupo">
+        <ul>
+          <li>HD</li>
+          <li>Marca <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Samsung <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Sandisk <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Espaço <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>500Gb <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>USB <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Marca <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Samsung <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Sandisk <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Espaço <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>500Gb <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>USB <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>+</li>
+        </ul>
+      </div>
+
+      <div class="box-grupo">
+        <ul>
+          <li>HD</li>
+          <li>Marca <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Samsung <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Sandisk <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>Espaço <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>500Gb <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>USB <input type="checkbox" class="checkbox-grupo" aria-label=""></li>
+          <li>+</li>
+        </ul>
+      </div>
+
+    </div>
+
+<!-- 
+    <div class="barra-bottom-content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <button class="btn btn-primary">Adicionar Grupo</button>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</form>
+
+<form role="tabpanel" class="form-horizontal tab-pane" id="screen-3">
+  <div class="container-fluid padding-20">
+
+    
+<div id="listaTabelaPreco">
+    <!-- <div class="busca-tabela">
+      <div class="input-group input-group-search"> 
+         
+        <input class="form-control bg-white" placeholder="Buscar..." aria-describedby="basic-addon1"> 
+      </div>
+      <span id="addTabelaPreco">
+      <button class="btn btn-primary">Novo Tabela de Preço</button>
+      </span>
+    </div> -->
+
+
+
+    <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addTabelaPreco">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -178,31 +683,304 @@
             </div> 
             </div>
 
+
+    <!-- <button class="btn btn-primary">+</button> -->
     <div class="scroller">
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th>Empresa</th>
             <th>Descrição</th>
-            <th>Tipo</th>
-            <th class="minima-td">Excluir</th>
+            <th>Preço</th>
+            <th>Vigência</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>Nome da Empresa</td>
             <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+            <td>R$300,00</td>
+            <td>De 19/07/17 À 19/08/17</td>
+            
           </tr>
           <tr>
+            <td>Nome da Empresa</td>
             <td>Descrição</td>
-            <td>Receber</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+            <td>R$300,00</td>
+            <td>De 19/07/17 À 19/08/17</td>
+            
           </tr>
           <tr>
+            <td>Nome da Empresa</td>
             <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+            <td>R$300,00</td>
+            <td>De 19/07/17 À 19/08/17</td>
+            
           </tr>
+          <tr>
+            <td>Nome da Empresa</td>
+            <td>Descrição</td>
+            <td>R$300,00</td>
+            <td>De 19/07/17 À 19/08/17</td>
+            
+          </tr>
+          <tr>
+            <td>Nome da Empresa</td>
+            <td>Descrição</td>
+            <td>R$300,00</td>
+            <td>De 19/07/17 À 19/08/17</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
+
+
+<div id="novoTabelaPreco">
+
+    <div class="card-add">
+    <div class="top-card">Nova Tabela de Preço</div>
+
+
+      <div class="row">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Código</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+          <label for="">Descrição</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label for="">Preço</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="panel panel-default"> 
+            <div class="panel-heading"><label>Vigência</label></div> 
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <label for="">De</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <label for="">À</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom-card">
+      <button class="btn btn-info space-column">Cancelar</button>
+      <span id="incluirTabelaPreco">
+      <button class="btn btn-primary space-column">Incluir na Lista</button>
+      </span>
+    </div>
+</div>
+
+
+
+
+
+
+  </div>
+</form>
+
+<form role="tabpanel" class="form-horizontal tab-pane" id="screen-4">
+  <div class="container-fluid padding-20">
+
+    
+<div id="listaVariacao">
+    <!-- <div class="busca-tabela">
+      <div class="input-group input-group-search"> 
+         
+        <input class="form-control bg-white" placeholder="Buscar..." aria-describedby="basic-addon1"> 
+      </div>
+      <span id="addVariacao">
+      <button class="btn btn-primary">Nova Variação</button>
+      </span>
+    </div> -->
+
+
+    <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addVariacao">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-200" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+
+
+    <!-- <button class="btn btn-primary">+</button> -->
+    <div class="scroller">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Empresa</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Código Referência</th>
+            <th>Situação</th>
+            <th>Gtin Produto</th>
+            <th>Gtin Embalagem</th>
+            <th>Localização</th>
+            <th>Peso Liquido</th>
+            <th>Peso Bruto</th>
+            <th>Tamanho</th>
+            <th>Qtde Caixa</th>
+            <th>Fabricante</th>
+            <th>Código Fabricante</th>
+            <th>Preço Custo</th>
+            <th>Produto Pai</th>
+            <th>Grade</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+          <tr>
+            <td>Empresa</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Código Referência</td>
+            <td>Situação</td>
+            <td>Gtin Produto</td>
+            <td>Gtin Embalagem</td>
+            <td>Localização</td>
+            <td>Peso Liquido</td>
+            <td>Peso Bruto</td>
+            <td>Tamanho</td>
+            <td>Qtde Caixa</td>
+            <td>Fabricante</td>
+            <td>Código Fabricante</td>
+            <td>Preço Custo</td>
+            <td>Produto Pai</td>
+            <td>Grade</td>
+            
+          </tr>
+
         </tbody>
       </table>
     </div>
@@ -213,25 +991,97 @@
 
 
 
-
-
-
-<div id="novoTipo">
+<div id="novoVariacao">
     <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
+    <div class="top-card">Nova Variação</div>
 
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <label for="">Empresa</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <label for="">Descrição</label>
           <input type="text" class="form-control" placeholder="">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Unidade</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon" data-toggle="modal" data-target="#unidadeModal"><a href="#">&equiv;</a></span>
+          </div>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label for="">Cod. Referência</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Tipo Produto</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Formato</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Situação</label>
+          <div class="box-switch">
+            <label class="switch">
+              <input type="checkbox">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label for="">Gtin Produto EAN 13</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label for="">Gtin Embalagem</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label for="">Localização</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Peso Líquido</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Peso Bruto</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Qtd. Caixa</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <label for="">Tamanho</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon" data-toggle="modal" data-target="#tamanhoModal"><a href="#">&equiv;</a></span>
+          </div>
         </div>
       </div>
 
@@ -239,11 +1089,10 @@
 
     <div class="bottom-card">
       <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
-      <button class="btn btn-primary space-column">Incluir</button>
+      <span id="incluirVariacao">
+      <button class="btn btn-primary space-column">Incluir na Lista</button>
       </span>
     </div>
-
 </div>
 
 
@@ -253,7 +1102,198 @@
 
 
 
+
+  </div>
+</form>
+
+<form role="tabpanel" class="form-horizontal tab-pane" id="screen-5">
+
+  <div class="container-fluid padding-20">
+
+    
+<div id="listaKit">
+  <!--   <div class="busca-tabela">
+      <div class="input-group input-group-search"> 
+         
+        <input class="form-control bg-white" placeholder="Buscar..." aria-describedby="basic-addon1"> 
       </div>
+      <span id="addKit">
+      <button class="btn btn-primary">Novo Kit</button>
+      </span>
+    </div> -->
+
+
+    <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addKit">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-200" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+
+
+    <!-- <button class="btn btn-primary">+</button> -->
+    <div class="scroller">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Componente</th>
+            <th>Quantidade</th>
+            <th>Tabela Preço</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+          <tr>
+            <td>Nome do Produto</td>
+            <td>Nome do Componente</td>
+            <td>50</td>
+            <td>Tabela Black Friday</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
+
+
+
+<div id="novoKit">
+    <div class="card-add">
+
+      <div class="top-card">Novo Kit</div>
+
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <label for="">Produto</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Produto 1</a></li>
+              <li><a href="#">Produto 2</a></li>
+              <li><a href="#">Produto 3</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <label for="">Componente</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Componente 1</a></li>
+              <li><a href="#">Componente 2</a></li>
+              <li><a href="#">Componente 3</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <label for="">Quantidade</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <label for="">Tabela Preço</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="">
+            <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a href="#"><span class="caret"></span></a></span>
+            <ul class="dropdown-menu">
+              <li><a href="#">Tabela 1</a></li>
+              <li><a href="#">Tabela 2</a></li>
+              <li><a href="#">Tabela 3</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom-card">
+      <button class="btn btn-info space-column">Cancelar</button>
+      <span id="incluirKit">
+      <button class="btn btn-primary space-column">Incluir na Lista</button>
+      </span>
+    </div>
+</div>
+
+
+
+
+</div>
+</form>
+
+</div>
+
+<div class="box-buttons">
+  <div class="inner-box-buttons">
+        <button type="button" class="btn btn-info space-column">Cancelar</button>
+        <button type="button" class="btn btn-success space-column">Salvar</button>
+</div> 
+</div>
+
+
+
+
+
+
+      
+
+
+
+
+
     </div>
 
 
@@ -278,19 +1318,89 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+ /* ------------- variacao -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaVariacao").style.display = "block";
+      document.getElementById("novoVariacao").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addVariacao").addEventListener("click", function(){
+      document.getElementById("listaVariacao").style.display = "none";
+      document.getElementById("novoVariacao").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirVariacao").addEventListener("click", function(){
+      document.getElementById("listaVariacao").style.display = "block";
+      document.getElementById("novoVariacao").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+
+
+   /* ------------- kit -------------- */
+
+    document.getElementById("listaKit").style.display = "block";
+      document.getElementById("novoKit").style.display = "none";
+
+    document.getElementById("addKit").addEventListener("click", function(){
+      document.getElementById("listaKit").style.display = "none";
+      document.getElementById("novoKit").style.display = "block";
+    });
+
+    document.getElementById("incluirKit").addEventListener("click", function(){
+      document.getElementById("listaKit").style.display = "block";
+      document.getElementById("novoKit").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+
+
+/* ------------- TabelaPreco -------------- */
+
+    document.getElementById("listaTabelaPreco").style.display = "block";
+      document.getElementById("novoTabelaPreco").style.display = "none";
+
+    document.getElementById("addTabelaPreco").addEventListener("click", function(){
+      document.getElementById("listaTabelaPreco").style.display = "none";
+      document.getElementById("novoTabelaPreco").style.display = "block";
+    });
+
+    document.getElementById("incluirTabelaPreco").addEventListener("click", function(){
+      document.getElementById("listaTabelaPreco").style.display = "block";
+      document.getElementById("novoTabelaPreco").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+   /* ------------- NCM -------------- */
+
+    document.getElementById("listaNCM").style.display = "block";
+      document.getElementById("novoNCM").style.display = "none";
+
+    document.getElementById("addNCM").addEventListener("click", function(){
+      document.getElementById("listaNCM").style.display = "none";
+      document.getElementById("novoNCM").style.display = "block";
+    });
+
+    document.getElementById("incluirNCM").addEventListener("click", function(){
+      document.getElementById("listaNCM").style.display = "block";
+      document.getElementById("novoNCM").style.display = "none";
     });
 
    /*  -------------------------------- */

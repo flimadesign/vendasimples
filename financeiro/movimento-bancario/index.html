@@ -64,7 +64,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -79,13 +79,14 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -94,7 +95,7 @@
       <li onclick="javascript:location.href=`${origin}/vendasimples/logistica/logistica/index.html?#`" class="nhoodDrop">
         <a href="#" class="nhoodButton"><i class="ti-truck" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Logística</span></a>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-stats-up" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Financeiro</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/index.html?#`"><a href="#">Tipo Documento</a></li>
@@ -104,7 +105,7 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/carteira.html?#`"><a href="#">Carteira Cobrança</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/plano.html?#`"><a href="#">Plano de Conta</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/movimento-financeiro/index.html?#`"><a href="#">Movimento Financeiro</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/movimento-bancario/index.html?#`"><a href="#">Movimento Bancário</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/movimento-bancario/index.html?#`" class="subActive"><a href="#">Movimento Bancário</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/servicos/servicos/index.html?#`" class="nhoodDrop">
@@ -137,9 +138,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Movimento Bacário</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Movimento Bacário</div>
 
 
     </div>
@@ -156,10 +157,19 @@
 
 
 
-      <div id="listaTipo">
+
+
+        <div class="tab-content">
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane active margin-top-20" id="screen-1">
+
+
+
+           <div id="listaConta">
            <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addConta">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -182,25 +192,45 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Descrição</th>
-            <th>Tipo</th>
+            <th>Banco</th>
+            <th>Número Agência</th>
+            <th>Digito Agência</th>
+            <th>Número Conta</th>
+            <th>Dígito Conta</th>
             <th class="minima-td">Excluir</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
+            <td>Banco</td>
+            <td>Número Agência</td>
+            <td>Digito Agência</td>
+            <td>Número Conta</td>
+            <td>Dígito Conta</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
-            <td>Descrição</td>
-            <td>Receber</td>
+            <td>Banco</td>
+            <td>Número Agência</td>
+            <td>Digito Agência</td>
+            <td>Número Conta</td>
+            <td>Dígito Conta</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
+            <td>Banco</td>
+            <td>Número Agência</td>
+            <td>Digito Agência</td>
+            <td>Número Conta</td>
+            <td>Dígito Conta</td>
+            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+          </tr>
+          <tr>
+            <td>Banco</td>
+            <td>Número Agência</td>
+            <td>Digito Agência</td>
+            <td>Número Conta</td>
+            <td>Dígito Conta</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
@@ -215,37 +245,97 @@
 
 
 
-
-<div id="novoTipo">
+<div id="novoConta">
     <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
+    <div class="top-card">Conta Corrente</div>
 
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Banco</label>
+          <div class="input-group">
+          <input type="text" class="form-control" placeholder="">
+          <span class="input-group-addon" data-toggle="modal" data-target="#bancoModal"><a href="#">&equiv;</a></span>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
           <label for="">Descrição</label>
           <input type="text" class="form-control" placeholder="">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Agência</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1">
+          <label for="">&nbsp;</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Conta</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1">
+          <label for="">&nbsp;</label>
+          <input type="text" class="form-control" placeholder="">
         </div>
       </div>
+
+
+
+
 
     </div>
 
     <div class="bottom-card">
       <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
+      <span id="incluirConta">
       <button class="btn btn-primary space-column">Incluir</button>
       </span>
     </div>
 
 </div>
 
+
+
+
+
+        </form>
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane margin-top-20" id="screen-2">
+
+          <div class="container-fluid">
+            teste2
+          </div>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 
@@ -278,19 +368,19 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+  /* ------------- Conta -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaConta").style.display = "block";
+    document.getElementById("novoConta").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addConta").addEventListener("click", function(){
+      document.getElementById("listaConta").style.display = "none";
+      document.getElementById("novoConta").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirConta").addEventListener("click", function(){
+      document.getElementById("listaConta").style.display = "block";
+      document.getElementById("novoConta").style.display = "none";
     });
 
    /*  -------------------------------- */

@@ -64,7 +64,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -73,19 +73,20 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/documentacao/index.html?#`"><a href="#">Documentação</a></li>
         </ul>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-clipboard" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Cadastros</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`" class="subActive"><a href="#">Parceiros</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -137,9 +138,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Parceiro</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Cadastros <i class="ti-angle-right" aria-hidden="true"></i> Parceiro</div>
 
 
     </div>
@@ -151,15 +152,316 @@
 
 
 
+      <div class="tab-header">
+        <ul class="nav nav-tabs nav-justified">
 
-      <div class="padding-20">
+          <li class="li-tab active">
+            <a href="#screen-1" aria-controls="screen-1" role="tab" data-toggle="tab">Dados Principais</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-2" aria-controls="screen-2" role="tab" data-toggle="tab">Email</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-3" aria-controls="screen-3" role="tab" data-toggle="tab">Telefone</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-4" aria-controls="screen-4" role="tab" data-toggle="tab">Endereço</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-5" aria-controls="screen-5" role="tab" data-toggle="tab">Lista de Contatos</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-6" aria-controls="screen-6" role="tab" data-toggle="tab">Observação</a>
+          </li>
+
+        </ul>
+        <div class="line-tab"></div>
+      </div>
 
 
 
-      <div id="listaTipo">
-           <div class="filtro-tabela">
+
+
+      <div class="tab-content">
+
+        <form role="tabpanel" class="form-horizontal tab-pane active" id="screen-1">
+
+          <div class="container-fluid padding-20">  
+
+
+
+              <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                  <label for="">Tipo Pessoa</label> 
+                  <select class="form-control" aria-required="true" aria-invalid="false">
+                    <option value="">Física</option>
+                    <option value="">Jurídica</option>
+                    <option value="">Rural</option>
+                  </select> 
+                  <i class="fa fa-warning" style="display: none;"></i> 
+                  <span class="span-error" style="display: none;"></span>
+                </div>
+
+              </div>
+
+
+              <hr><br>
+
+
+
+
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+      <label for="">Nome / Fantasia</label> 
+      <input type="text" placeholder="" class="form-control">
+    </div> 
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+      <label for="">Cliente</label> 
+      <div class="box-switch">
+        <label class="switch">
+          <input type="checkbox"> 
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div> 
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+      <label for="">Fornecedor</label> 
+      <div class="box-switch">
+        <label class="switch">
+          <input type="checkbox"> 
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div> 
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+      <label for="">Transportadora</label> 
+      <div class="box-switch">
+        <label class="switch">
+          <input type="checkbox"> 
+          <div class="slider round"></div>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+      <label for="">CPF</label> 
+      <input data-vv-scope="cpfParceiro" data-vv-as="CPF" name="min" type="text" placeholder="" class="form-control" data-mask="###.###.###-##" data-previous-value="" aria-required="true" aria-invalid="false"> 
+      <i class="fa fa-warning" style="display: none;"></i> 
+      <span class="span-error" style="display: none;"></span>
+    </div> 
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"><label for="">RG</label> 
+      <input data-vv-scope="rgParceiro" data-vv-as="RG" name="numeric" type="text" placeholder="" class="form-control" aria-required="true" aria-invalid="false"><i class="fa fa-warning" style="display: none;"></i> 
+      <span class="span-error" style="display: none;"></span>
+    </div> 
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+      <label for="">Orgão Expedidor</label> 
+      <input type="text" class="form-control" data-mask="AA" data-previous-value=""></div> 
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+        <label for="">Contribuinte</label> 
+        <select data-vv-scope="contribuinteParceiro" data-vv-as="CONTRIBUINTE" name="in" class="form-control" aria-required="true" aria-invalid="false">
+          <option value="">Selecione o tipo de contribuinte</option> 
+        </select> 
+        <i class="fa fa-warning" style="display: none;"></i> 
+        <span class="span-error" style="display: none;"></span>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+        <label for="">Estado Civil</label> 
+        <select class="form-control"></select>
+      </div> 
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+        <label for="">Profissão</label> 
+        <input type="text" placeholder="" class="form-control"></div>
+      </div> 
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label for="">Sexo</label> 
+          <select class="form-control"></select>
+        </div> 
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label for="">Data de Nascimento</label> 
+          <input type="date" placeholder="" class="form-control">
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label for="">Nacionalidade</label> 
+          <input type="text" placeholder="" class="form-control">
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <label for="">Nome do Pai</label> 
+          <input type="text" placeholder="" class="form-control">
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <label for="">CPF do Pai</label> 
+          <input data-vv-scope="cpfPai" data-vv-as="CPF do pai" name="min" type="text" placeholder="" class="form-control" data-mask="###.###.###-##" data-previous-value="" aria-required="true" aria-invalid="false"> 
+          <i class="fa fa-warning" style="display: none;"></i> 
+          <span class="span-error" style="display: none;"></span>
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Falecido</label> 
+          <div class="box-switch">
+            <label class="switch">
+              <input type="checkbox"> 
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          <label for="">Nome da Mãe</label> 
+          <input type="text" placeholder="" class="form-control">
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <label for="">CPF da mãe</label> 
+          <input data-vv-scope="cpfMae" data-vv-as="CPF da mãe" name="min" type="text" placeholder="" class="form-control" data-mask="###.###.###-##" data-previous-value="" aria-required="true" aria-invalid="false"> 
+          <i class="fa fa-warning" style="display: none;"></i> 
+          <span class="span-error" style="display: none;"></span>
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Falecido</label> 
+          <div class="box-switch">
+            <label class="switch">
+              <input type="checkbox"> 
+              <div class="slider round">
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane" id="screen-2">
+              <div class="container-fluid padding-20">
+               
+
+
+
+
+
+<div id="novoEmail">
+
+          <div class="card-add">
+
+          <div class="top-card">Novo Email</div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                  <label for="">Email</label> 
+                  <input type="email" placeholder="" class="form-control">
+                </div> 
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                  <label for="">Boleto</label> 
+                  <div class="box-switch">
+                    <label class="switch">
+                      <input type="checkbox"> 
+                      <div class="slider round"></div>
+                    </label>
+                  </div>
+                </div> 
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                  <label for="">Mala Direta</label> 
+                  <div class="box-switch">
+                    <label class="switch">
+                      <input type="checkbox"> 
+                      <div class="slider round"></div>
+                    </label>
+                  </div>
+                </div> 
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                  <label for="">Documento Fiscal</label> 
+                  <div class="box-switch">
+                    <label class="switch">
+                      <input type="checkbox"> 
+                      <div class="slider round"></div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label for="">Setor</label> 
+                  <select class="form-control"></select>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="bottom-card">
+              <button class="btn btn-info space-column">Cancelar</button>
+              <span id="incluirEmail">
+              <button class="btn btn-primary space-column">Incluir na Lista</button>
+              </span>
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+          <div id="listaEmail"> 
+
+
+          <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addEmail">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -167,7 +469,7 @@
             </div>
             <div class="row-table">
               <label class="label-table" for="">Buscar Por:</label> 
-                  <select class="form-control max-w-200" aria-required="true" aria-invalid="false">
+                  <select class="form-control max-w-300" aria-required="true" aria-invalid="false">
                     <option value="">Nota</option>
                     <option value="">Nota</option>
                     <option value="">Nota</option>
@@ -178,82 +480,761 @@
             </div> 
             </div>
 
-    <div class="scroller">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th class="minima-td">Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-          <tr>
-            <td>Descrição</td>
-            <td>Receber</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-          <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+
+          <div class="scroller">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Boleto</th>
+                  <th>Mala Direta</th>
+                  <th>Documento Fiscal</th>
+                  <th>Setor</th>
+                  <th class="minima-td">Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          </div>
+
+
+
+
+
+              </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane" id="screen-3">
+              <div class="container-fluid padding-20">
+
+              <div id="novoTelefone">
+
+              <div class="card-add">
+
+          <div class="top-card">Novo Telefone</div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                  <label for="">Telefone</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1">
+                  <label for="">Ramal</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                  <label for="">Operadora</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                  <label for="">Complemento</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                  <label for="">Atribuição</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+              </div>
+
+              <div class="bottom-card">
+              <button class="btn btn-info space-column">Cancelar</button>
+              <span id="incluirTelefone">
+              <button class="btn btn-primary space-column">Incluir na Lista</button>
+              </span>
+              </div>
+
+              </div>
+
+  
+         <div id="listaTelefone">
+          <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addTelefone">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-300" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+          <div class="scroller">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Boleto</th>
+                  <th>Mala Direta</th>
+                  <th>Documento Fiscal</th>
+                  <th>Setor</th>
+                  <th class="minima-td">Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>bredas@bredas.com.br</td>
+                  <td class="center-td"><span class="label label-success">sim</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+<td class="center-td"><span class="label label-danger">não</span></td>
+                  <td>Atendimento</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane" id="screen-4">
+              <div class="container-fluid padding-20">
+
+
+
+                <ul class="nav nav-pills nav-justified">
+                  <li role="presentation" class="active">
+                    <a href="#endereco1" aria-controls="endereco1" data-toggle="tab">Principal</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#endereco2" aria-controls="endereco1" data-toggle="tab">Entrega</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#endereco3" aria-controls="endereco1" data-toggle="tab">Cobrança</a>
+                  </li>
+                </ul>
+
+
+
+                  <div class="tab-content margin-top-20">
+
+                    <form class="form-horizontal tab-pane" id="endereco1">
+
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                            <label for="">Logradouro</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                            <label for="">Número</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                        </div>
+
+
+
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                            <label for="">Bairro</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                            <label for="">Complemento</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                            <label for="">CEP</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                        </div>
+
+
+
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                            <label for="">Código IBGE</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                            <label for="">Cidade</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                            <label for="">CEP</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1">
+                            <label for="">UF</label>
+                            <input type="text" class="form-control" placeholder="">
+                          </div>
+                        </div>
+
+                    </form>
+
+                    <form class="form-horizontal tab-pane" id="endereco2">
+                        2
+                    </form>
+
+                    <form class="form-horizontal tab-pane" id="endereco3">
+                        3
+                    </form>
+
+
+                  </div>
+
+
+              </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane" id="screen-5">
+        <div class="container-fluid padding-20">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="novoContatos">
+       <form>
+              <div class="card-add">
+                 <div class="top-card">Nova Lista de Contato</div>
+
+                <div class="row">
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                  <label for="">Nome</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                  <label for="">Skype</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <label for="">Complemento</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+
+
+              <div class="row">
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel panel-default"> 
+                    <div class="panel-heading"><h4 class="titulo-cadastro">Lista de Emails</h4></div> 
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Email 1</label>
+                          <input type="text" class="form-control" placeholder="joanasecretaria@email.com">
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe NF-e</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe Boleto</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe Mala direta</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+
+                      <hr>
+
+
+
+
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Email 2</label>
+                          <input type="text" class="form-control" placeholder="joanasecretaria@email.com">
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe NF-e</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe Boleto</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Recebe Mala direta</label>
+                          <div class="box-switch">
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        </div>
+                      </div>
+
+
+                      
+                      <hr>
+
+
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <button class="btn btn-info">adicionar email</button>
+                        </div>
+                      </div>
+
+
+
+                    </div> 
+                </div>
+              </div>
+
+
+
+
+              </div>
+
+
+
+
+
+
+              <div class="row">
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="panel panel-default"> 
+                    <div class="panel-heading"><h4 class="titulo-cadastro">Lista de Telefones</h4></div> 
+                    <div class="panel-body">
+
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Telefone 1</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                          <label for="">Ramal</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Tipo</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Operadora</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Complemento</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+                      </div>
+
+
+                      <hr>
+
+
+                      <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Telefone 2</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                          <label for="">Ramal</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Tipo</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <label for="">Operadora</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                          <label for="">Complemento</label>
+                          <input type="text" class="form-control" placeholder="">
+                        </div>
+                      </div>
+
+
+
+                      <hr>
+
+
+
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <button class="btn btn-info">adicionar telefone</button>
+                        </div>
+                      </div>
+
+
+
+
+
+
+                    </div> 
+                </div>
+              </div>
+
+
+
+              </div>
+
+
+
+
+
+              </div>
+              <div class="bottom-card">
+                <button class="btn btn-info space-column">Cancelar</button>
+                <div id="incluirContatos">
+                <button class="btn btn-primary space-column">Incluir na Lista</button>
+                </div>
+              </div>
+        </form>
+
+        </div>
+
+
+        <div id="listaContatos">
+
+              <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addContatos">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-300" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+
+
+              <div class="scroller">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Skype</th>
+                    <th>Complemento</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th class="minima-td">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active-tr">
+                    <td>Joana</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>José Morenoso</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>José Morenoso</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>José Morenoso</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>José Morenoso</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>José Morenoso</td>
+                    <td>JMSkype</td>
+                    <td>Pá Sei que Lá</td>
+                    <td>moreninho@gmail.com</td>
+                    <td>999999999</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+
+              </div>
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane" id="screen-6">
+              <div class="container-fluid padding-20">
+                
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <label for="">Observação Geral</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                  <label for="">Cliente</label>
+                  <div class="box-switch">
+                      <label class="switch">
+                      <input type="checkbox">
+                      <div class="slider round"></div>
+                    </label>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                  <label for="">Transportadora</label>
+                  <div class="box-switch">
+                      <label class="switch">
+                      <input type="checkbox">
+                      <div class="slider round"></div>
+                    </label>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                  <label for="">Fornecedor</label>
+                  <div class="box-switch">
+                      <label class="switch">
+                      <input type="checkbox">
+                      <div class="slider round"></div>
+                    </label>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                  <label for="">Situação</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                  <label for="">Ramo de Atividade</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+
+
+              </div>
+        </form>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="box-buttons">
+  <div class="inner-box-buttons">
+        <button type="button" class="btn btn-info space-column"><i class="ti-close" aria-hidden="true"></i> Cancelar</button>
+        <button type="button" class="btn btn-success space-column"><i class="ti-check" aria-hidden="true"></i> Salvar</button>
+</div> 
 </div>
 
 
 
 
 
-
-
-
-
-<div id="novoTipo">
-    <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
-
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
-          <label for="">Descrição</label>
-          <input type="text" class="form-control" placeholder="">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bottom-card">
-      <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
-      <button class="btn btn-primary space-column">Incluir</button>
-      </span>
-    </div>
-
-</div>
-
-
-
-
-
-
-
-
-      </div>
+      
     </div>
 
 
@@ -278,19 +1259,58 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+   /* ------------- contatos -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaContatos").style.display = "block";
+      document.getElementById("novoContatos").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addContatos").addEventListener("click", function(){
+      document.getElementById("listaContatos").style.display = "none";
+      document.getElementById("novoContatos").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirContatos").addEventListener("click", function(){
+      document.getElementById("listaContatos").style.display = "block";
+      document.getElementById("novoContatos").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+
+    /* ------------- contatos -------------- */
+
+    document.getElementById("listaEmail").style.display = "block";
+      document.getElementById("novoEmail").style.display = "none";
+
+    document.getElementById("addEmail").addEventListener("click", function(){
+      document.getElementById("listaEmail").style.display = "none";
+      document.getElementById("novoEmail").style.display = "block";
+    });
+
+    document.getElementById("incluirEmail").addEventListener("click", function(){
+      document.getElementById("listaEmail").style.display = "block";
+      document.getElementById("novoEmail").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+       /* ------------- telefone -------------- */
+
+    document.getElementById("listaTelefone").style.display = "block";
+      document.getElementById("novoTelefone").style.display = "none";
+
+    document.getElementById("addTelefone").addEventListener("click", function(){
+      document.getElementById("listaTelefone").style.display = "none";
+      document.getElementById("novoTelefone").style.display = "block";
+    });
+
+    document.getElementById("incluirTelefone").addEventListener("click", function(){
+      document.getElementById("listaTelefone").style.display = "block";
+      document.getElementById("novoTelefone").style.display = "none";
     });
 
    /*  -------------------------------- */

@@ -48,6 +48,7 @@
     flex-direction: column;
     flex: 1 0 auto;
     height: 100%;
+    overflow-y: auto;
     display: flex;
     padding-top: 55px;
     display: -webkit-flex;
@@ -225,6 +226,13 @@ background-color: #f0f2f5;
     box-shadow: none !important;
     margin-left: 0;
     border-bottom: 0;
+}
+
+.nhoodDrop.active {
+  border-left: 5px solid #5097dc;
+}
+#sidebar-wrapper > .sidebar-nav ul.nhoodDropInner li.subActive {
+  background-color: #dde0e4 !important;
 }
 
 /*

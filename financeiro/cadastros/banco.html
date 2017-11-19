@@ -65,7 +65,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -80,13 +80,14 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -95,13 +96,13 @@
       <li onclick="javascript:location.href=`${origin}/vendasimples/logistica/logistica/index.html?#`" class="nhoodDrop">
         <a href="#" class="nhoodButton"><i class="ti-truck" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Logística</span></a>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-stats-up" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Financeiro</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/index.html?#`"><a href="#">Tipo Documento</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/forma.html?#`"><a href="#">Forma Pagamento</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/condicao.html?#`"><a href="#">Condição Pagamento</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/banco.html?#`"><a href="#">Banco</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/banco.html?#`" class="subActive"><a href="#">Banco</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/carteira.html?#`"><a href="#">Carteira Cobrança</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/plano.html?#`"><a href="#">Plano de Conta</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/movimento-financeiro/index.html?#`"><a href="#">Movimento Financeiro</a></li>
@@ -138,9 +139,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Banco</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Banco</div>
 
 
     </div>
@@ -152,15 +153,14 @@
 
 
 
+      
+<div class="padding-20">
 
-      <div class="padding-20">
 
-
-
-      <div id="listaTipo">
+<div id="listaBanco">
            <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addBanco">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -178,30 +178,46 @@
                   <input type="text" class="form-control">
             </div> 
             </div>
-
+    <!-- <button class="btn btn-primary">+</button> -->
     <div class="scroller">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Descrição</th>
-            <th>Tipo</th>
+            <th>Código</th>
+            <th>Código Banco</th>
+            <th>Banco</th>
             <th class="minima-td">Excluir</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
+            <td>0001</td>
+            <td>34</td>
+            <td>Santander</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
-            <td>Descrição</td>
-            <td>Receber</td>
+            <td>0002</td>
+            <td>22</td>
+            <td>Caixa</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
+            <td>0003</td>
+            <td>67</td>
+            <td>Banco do Brasil</td>
+            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+          </tr>
+          <tr>
+            <td>0004</td>
+            <td>70</td>
+            <td>Itaú</td>
+            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+          </tr>
+          <tr>
+            <td>0005</td>
+            <td>98</td>
+            <td>Bradesco</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
@@ -217,22 +233,23 @@
 
 
 
-<div id="novoTipo">
+<div id="novoBanco">
     <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
+    <div class="top-card">Novo Banco</div>
 
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
-          <label for="">Descrição</label>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Código</label>
           <input type="text" class="form-control" placeholder="">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+          <label for="">Código Banco</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <label for="">Banco</label>
+          <input type="text" class="form-control" placeholder="">
         </div>
       </div>
 
@@ -240,7 +257,7 @@
 
     <div class="bottom-card">
       <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
+      <span id="incluirBanco">
       <button class="btn btn-primary space-column">Incluir</button>
       </span>
     </div>
@@ -255,6 +272,10 @@
 
 
       </div>
+
+      
+
+
     </div>
 
 
@@ -279,19 +300,19 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+  /* ------------- Banco -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaBanco").style.display = "block";
+    document.getElementById("novoBanco").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addBanco").addEventListener("click", function(){
+      document.getElementById("listaBanco").style.display = "none";
+      document.getElementById("novoBanco").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirBanco").addEventListener("click", function(){
+      document.getElementById("listaBanco").style.display = "block";
+      document.getElementById("novoBanco").style.display = "none";
     });
 
    /*  -------------------------------- */

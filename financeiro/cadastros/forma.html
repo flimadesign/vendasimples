@@ -64,7 +64,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -79,13 +79,14 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -94,11 +95,11 @@
       <li onclick="javascript:location.href=`${origin}/vendasimples/logistica/logistica/index.html?#`" class="nhoodDrop">
         <a href="#" class="nhoodButton"><i class="ti-truck" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Logística</span></a>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-stats-up" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Financeiro</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/index.html?#`"><a href="#">Tipo Documento</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/forma.html?#`"><a href="#">Forma Pagamento</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/forma.html?#`" class="subActive"><a href="#">Forma Pagamento</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/condicao.html?#`"><a href="#">Condição Pagamento</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/banco.html?#`"><a href="#">Banco</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/financeiro/cadastros/carteira.html?#`"><a href="#">Carteira Cobrança</a></li>
@@ -137,9 +138,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Forma de Pagamento</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Forma de Pagamento</div>
 
 
     </div>
@@ -156,10 +157,12 @@
 
 
 
-      <div id="listaTipo">
+
+
+        <div id="listaForma">
            <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addForma">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -177,30 +180,26 @@
                   <input type="text" class="form-control">
             </div> 
             </div>
-
+    <!-- <button class="btn btn-primary">+</button> -->
     <div class="scroller">
       <table class="table table-bordered">
         <thead>
           <tr>
             <th>Descrição</th>
-            <th>Tipo</th>
             <th class="minima-td">Excluir</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Descrição</td>
-            <td>Pagar</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
             <td>Descrição</td>
-            <td>Receber</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
           <tr>
             <td>Descrição</td>
-            <td>Pagar</td>
             <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
           </tr>
         </tbody>
@@ -215,23 +214,15 @@
 
 
 
-
-<div id="novoTipo">
+<div id="novoForma">
     <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
+    <div class="top-card">Forma de Pagamento</div>
 
 
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <label for="">Descrição</label>
           <input type="text" class="form-control" placeholder="">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
         </div>
       </div>
 
@@ -239,13 +230,12 @@
 
     <div class="bottom-card">
       <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
+      <span id="incluirForma">
       <button class="btn btn-primary space-column">Incluir</button>
       </span>
     </div>
 
 </div>
-
 
 
 
@@ -278,19 +268,19 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+  /* ------------- Forma -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaForma").style.display = "block";
+    document.getElementById("novoForma").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addForma").addEventListener("click", function(){
+      document.getElementById("listaForma").style.display = "none";
+      document.getElementById("novoForma").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirForma").addEventListener("click", function(){
+      document.getElementById("listaForma").style.display = "block";
+      document.getElementById("novoForma").style.display = "none";
     });
 
    /*  -------------------------------- */

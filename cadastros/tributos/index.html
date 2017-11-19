@@ -64,7 +64,7 @@
 
     <ul id="ul-sidebar" class="sidebar-nav">
 
-      <li class="nhoodDrop active openInner">
+      <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-layout" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Inicio</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/acesso/index.html?#`"><a href="#">Acesso Rápido</a></li>
@@ -73,19 +73,20 @@
           <li onclick="javascript:location.href=`${origin}/vendasimples/inicio/documentacao/index.html?#`"><a href="#">Documentação</a></li>
         </ul>
       </li>
-      <li class="nhoodDrop">
+      <li class="nhoodDrop active openInner">
         <a href="#" class="nhoodButton expand-li"><i class="ti-clipboard" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Cadastros</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/parceiro/index.html?#`"><a href="#">Parceiros</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/produto/index.html?#`"><a href="#">Produtos</a></li>
           <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/vendedor/index.html?#`"><a href="#">Vendedores</a></li>
-          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tibutos/index.html?#`"><a href="#">Tributos</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/cadastros/tributos/index.html?#`" class="subActive"><a href="#">Tributos</a></li>
         </ul>
       </li>
       <li class="nhoodDrop">
         <a href="#" class="nhoodButton expand-li"><i class="ti-package" alt="Cadastros" aria-hidden="true"></i><span class="text-li-sidebar">Compras</span></a> <i class="ti-angle-down dropTrigger expand-li"></i>
         <ul class="nhoodDropInner top expand-li">
           <li onclick="javascript:location.href=`${origin}/vendasimples/compras/requisicao/index.html?#`"><a href="#">Requisição</a></li>
+          <li onclick="javascript:location.href=`${origin}/vendasimples/compras/nota-entrada/index.html?#`"><a href="#">Nota Entrada</a></li>
         </ul>
       </li>
       <li onclick="javascript:location.href=`${origin}/vendasimples/vendas/vendas/index.html?#`" class="nhoodDrop">
@@ -137,9 +138,9 @@
 
 
 
- <div class="title-page">Tipo Documento</div>
+ <div class="title-page">Tributos</div>
 
- <div class="map-title">Financeiro <i class="ti-angle-right" aria-hidden="true"></i> Tipo Documento</div>
+ <div class="map-title">Cadastros <i class="ti-angle-right" aria-hidden="true"></i> Tributos</div>
 
 
     </div>
@@ -150,16 +151,130 @@
 
 
 
+      
+            <div class="tab-header">
+        <ul class="nav nav-tabs nav-justified">
+
+          <li class="li-tab active">
+            <a href="#screen-1" aria-controls="screen-1" role="tab" data-toggle="tab">NCM</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-2" aria-controls="screen-2" role="tab" data-toggle="tab">CFOP</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-3" aria-controls="screen-3" role="tab" data-toggle="tab">Finalidade</a>
+          </li>
+
+          <li class="li-tab">
+            <a href="#screen-4" aria-controls="screen-4" role="tab" data-toggle="tab">Classificação Fiscal</a>
+          </li>
 
 
-      <div class="padding-20">
+        </ul>
+        <div class="line-tab"></div>
+      </div>
+
+      <div class="tab-content">
+
+        <form role="tabpanel" class="form-horizontal tab-pane active " id="screen-1">
+          <div class="container-fluid padding-20">
+          <div id="novoNCM">
+
+        <form>
+          <div class="card-add">
+
+          <div class="top-card">Novo NCM</div>
+
+            <div class="row">
+
+              <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <label for="">Código NCM</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <label for="">Código NCM</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                <label for="">Descrição</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-default"> 
+                  <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="titulo-cadastro">Aliquitas IBPT (%)</div>
+                </div>
+              </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="">Nacional</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="">Estadual</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="">Municipal</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="">NCM/NBS</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="">
+                          <span class="input-group-addon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#"><span class="caret"></span></a></span>
+                            <ul class="dropdown-menu">
+                              <li><a href="#">Action</a></li>
+                              <li><a href="#">Another action</a></li>
+                              <li><a href="#">Something else here</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+              </div>
 
 
 
-      <div id="listaTipo">
-           <div class="filtro-tabela">
+            </div>
+
+            <div class="bottom-card">
+              <button class="btn btn-info space-column">Cancelar</button>
+              <span id="incluirNCM">
+              <button class="btn btn-primary space-column">Incluir na Lista</button>
+              </span>
+            </div>
+
+          </form>
+
+
+          </div>
+
+
+
+
+
+
+
+          <div id="listaNCM">
+
+          <div class="filtro-tabela">
             <div class="row-table">
-              <span id="addTipo">
+              <span id="addNCM">
               <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
               </span>
               <i class="space-button"></i>
@@ -178,35 +293,56 @@
             </div> 
             </div>
 
-    <div class="scroller">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th class="minima-td">Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-          <tr>
-            <td>Descrição</td>
-            <td>Receber</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-          <tr>
-            <td>Descrição</td>
-            <td>Pagar</td>
-            <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</div>
+          <div class="scroller">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Número</th>
+                  <th>Descrição</th>
+                  <th class="minima-td">Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>24523</td>
+                  <td>3647347</td>
+                  <td>Descrição</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>24523</td>
+                  <td>3647347</td>
+                  <td>Descrição</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>24523</td>
+                  <td>3647347</td>
+                  <td>Descrição</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>24523</td>
+                  <td>3647347</td>
+                  <td>Descrição</td>
+                  <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          </div>
+
+
+
+
+
+
+
+
+          </div>
+        </form>
 
 
 
@@ -216,44 +352,486 @@
 
 
 
-<div id="novoTipo">
-    <div class="card-add">
-    <div class="top-card">Novo Tipo de Documento</div>
 
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
-          <label for="">Descrição</label>
-          <input type="text" class="form-control" placeholder="">
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-          <label for="">Tipo</label>
-          <select class="form-control">
-            <option>Pagar</option>
-            <option>Receber</option>
-          </select>
-        </div>
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane " id="screen-2">
+          <div class="container-fluid padding-20">
+
+
+          <div id="novoCFOP">
+            
+            <div class="card-add">
+
+            <div class="top-card">Novo CFOP</div>
+
+                <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2">
+                  <label for="">CFOP</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
+                  <label for="">Descrição</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+
+
+
+
+              <div class="row">
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">Estoque</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">Financeiro</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">Inventário</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">Custo</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">Faturamento</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">ICMS</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+
+
+
+              <div class="row">
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">ICMS Exceção</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label for="">S.T. Exceção</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-4">
+                      <label for="">Crédito ICMS - Simples Nacional</label>
+                      <div class="box-switch">
+                          <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4">
+                      <label for="">Observação</label>
+                      <input type="text" class="form-control" placeholder="">
+                  </div>
+              </div>
+
+
+
+              </div>
+
+
+
+              <div class="bottom-card">
+              <button class="btn btn-info space-column">Cancelar</button>
+              <span id="incluirCFOP">
+              <button class="btn btn-primary space-column">Incluir na Lista</button>
+              </span>
+            </div>
+
+
+
+          </div>
+
+
+          <div id="listaCFOP">
+            
+            <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addCFOP">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-200" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+            <div class="scroller">
+              
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>CFOP</th>
+                  <th>Descrição</th>
+                  <th>Estoque</th>
+                  <th>Financeiro</th>
+                  <th>Invetário</th>
+                  <th>Custo</th>
+                  <th>ICMS</th>
+                  <th>ICMS Exceção</th>
+                  <th>S.T. Exceção</th>
+                  <th>Crédito ICMS</th>
+                  <th>Observação</th>
+                  <th>Excluir</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>24523</td>
+                    <td>Compra</td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                   <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>24523</td>
+                    <td>Compra</td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>24523</td>
+                    <td>Compra</td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="center-td"><span class="label label-danger">não</span></td>
+                    <td class="center-td"><span class="label label-success">sim</span></td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+          </div>
+
+
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane " id="screen-3">
+          <div class="container-fluid padding-20">
+
+            
+
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form role="tabpanel" class="form-horizontal tab-pane " id="screen-4">
+          <div class="container-fluid padding-20">
+
+
+
+          <div id="novoClassificacao">
+            
+            <div class="card-add">
+
+            <div class="top-card">Nova Classificação Fiscal</div>
+
+                <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                  <label for="">Código NCM</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">Código NCM</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <label for="">Descrição</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="titulo-cadastro">Aliquitas IBPT (%)</div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">Nacional</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">Estadual</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">Municipal</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">NCM/NBS</label>
+                  <div class="input-group"> 
+                    <input class="form-control" aria-label="Text input with dropdown button"> 
+                    <div class="input-group-btn"> 
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button> 
+                      <ul class="dropdown-menu dropdown-menu-right"> 
+                        <li><a href="#">1</a></li> 
+                        <li><a href="#">2</a></li> 
+                      </ul> 
+                    </div> 
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+              <div class="row">
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <label for="">Atualizar Arquivo IBPT</label>
+                    <button type="button" class="btn btn-gray width-100">Atualizar <i class="fa fa-refresh" aria-hidden="true"></i></button>
+                </div>
+
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                  <label for="">&nbsp;</label>
+                  <div class="progress"> 
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"> 
+                  <span class="sr-only">40% Complete (success)</span> 
+                  </div> 
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+              </div>
+
+              <div class="bottom-card">
+                <button class="btn btn-info space-column">Cancelar</button>
+                <span id="incluirClassificacao">
+                <button class="btn btn-primary space-column">Incluir na Lista</button>
+                </span>
+              </div>
+
+          </div>
+
+
+
+          <div id="listaClassificacao">
+
+
+            <div class="filtro-tabela">
+            <div class="row-table">
+              <span id="addClassificacao">
+              <button class="btn btn-primary"><i class="ti-plus" aria-hidden="true"></i> Novo</button>
+              </span>
+              <i class="space-button"></i>
+              <button disabled="disabled" class="btn btn-danger"><i class="ti-trash" aria-hidden="true"></i> Excluir</button>
+            </div>
+            <div class="row-table">
+              <label class="label-table" for="">Buscar Por:</label> 
+                  <select class="form-control max-w-200" aria-required="true" aria-invalid="false">
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                    <option value="">Nota</option>
+                  </select> 
+                  <i class="space-button"></i>
+                  <label class="label-table" for="">Digite para Pesquisar:</label> 
+                  <input type="text" class="form-control">
+            </div> 
+            </div>
+
+          <div class="scroller">
+
+
+            
+
+
+
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Número</th>
+                    <th>Descrição</th>
+                    <th class="minima-td">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>24523</td>
+                    <td>3647347</td>
+                    <td>Descrição</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>24523</td>
+                    <td>3647347</td>
+                    <td>Descrição</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>24523</td>
+                    <td>3647347</td>
+                    <td>Descrição</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>24523</td>
+                    <td>3647347</td>
+                    <td>Descrição</td>
+                    <td class="minima-td"><a href="" class="icon-table"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+
+              </div>
+
+
+
+
+
+
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
 
-    </div>
-
-    <div class="bottom-card">
-      <button class="btn btn-info space-column">Cancelar</button>
-      <span id="incluirTipo">
-      <button class="btn btn-primary space-column">Incluir</button>
-      </span>
-    </div>
-
-</div>
 
 
 
 
-
-
-
-
-      </div>
     </div>
 
 
@@ -278,19 +856,57 @@
 
 <script type="text/javascript">
   
-  /* ------------- Tipo -------------- */
+ /* ------------- NCM -------------- */
 
-    document.getElementById("listaTipo").style.display = "block";
-    document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("listaNCM").style.display = "block";
+      document.getElementById("novoNCM").style.display = "none";
 
-    document.getElementById("addTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "none";
-      document.getElementById("novoTipo").style.display = "block";
+    document.getElementById("addNCM").addEventListener("click", function(){
+      document.getElementById("listaNCM").style.display = "none";
+      document.getElementById("novoNCM").style.display = "block";
     });
 
-    document.getElementById("incluirTipo").addEventListener("click", function(){
-      document.getElementById("listaTipo").style.display = "block";
-      document.getElementById("novoTipo").style.display = "none";
+    document.getElementById("incluirNCM").addEventListener("click", function(){
+      document.getElementById("listaNCM").style.display = "block";
+      document.getElementById("novoNCM").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+   /* ------------- CFOP -------------- */
+
+    document.getElementById("listaCFOP").style.display = "block";
+      document.getElementById("novoCFOP").style.display = "none";
+
+    document.getElementById("addCFOP").addEventListener("click", function(){
+      document.getElementById("listaCFOP").style.display = "none";
+      document.getElementById("novoCFOP").style.display = "block";
+    });
+
+    document.getElementById("incluirCFOP").addEventListener("click", function(){
+      document.getElementById("listaCFOP").style.display = "block";
+      document.getElementById("novoCFOP").style.display = "none";
+    });
+
+   /*  -------------------------------- */
+
+
+
+    /* ------------- Classificacao -------------- */
+
+    document.getElementById("listaClassificacao").style.display = "block";
+      document.getElementById("novoClassificacao").style.display = "none";
+
+    document.getElementById("addClassificacao").addEventListener("click", function(){
+      document.getElementById("listaClassificacao").style.display = "none";
+      document.getElementById("novoClassificacao").style.display = "block";
+    });
+
+    document.getElementById("incluirClassificacao").addEventListener("click", function(){
+      document.getElementById("listaClassificacao").style.display = "block";
+      document.getElementById("novoClassificacao").style.display = "none";
     });
 
    /*  -------------------------------- */
